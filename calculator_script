@@ -1,0 +1,31 @@
+# simple calculator
+while True:
+    print("Hello, human! Welcome to Simple Calculator Land.")
+    first_number = input("Please enter your first number:")
+    operator = input("Please enter an operator (+, -, *, /)")
+    second_number = input("Now, please enter your second number:")
+
+    flt_first = float(first_number)
+    flt_second = float(second_number)
+
+    try:
+        if operator == "+":
+            answer = flt_first + flt_second
+        elif operator == "-":
+            answer = flt_first - flt_second
+        elif operator == "*":
+            answer = flt_first * flt_second
+        elif operator == "/":
+            answer = flt_first / flt_second
+        else: 
+            print("I am sorry but we have not yet learned that operation.")
+            answer = None
+        if answer is not None:
+            print("Here is your operation and your solution:", first_number, operator, second_number, "=", answer)
+    except ZeroDivisionError:
+        print("Cannot Divide by 0.")
+
+    repeat = input("\n Would you like to perform another calculation? (Y/N)")
+    if repeat.lower() == "n":
+        print("Goodbye human!  Please visit us again anytime!!!")
+        break
